@@ -1,0 +1,24 @@
+# Build
+target/
+build/
+*.class
+*.jar
+!**/.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Segredos e ambiente local
+.env
+*.env
+application-local.yml
+application-local.properties
+
+# Logs e SO
+*.log
+.DS_Store
