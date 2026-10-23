@@ -9,7 +9,7 @@
 
 ## Decisão
 
-- **Spring Boot 4.1.1**, **Java 21** (LTS) e **Maven**, com o Maven Wrapper em cada serviço.
+- **Spring Boot 4.1.2**, **Java 21** (LTS) e **Maven**, com o Maven Wrapper em cada serviço.
 - **Spring Cloud 2025.1.x**, usando o BOM gerado pelo Spring Initializr, sem fixar versões à mão.
 - Dependências entram **por fase**: segurança (OAuth2 Resource Server) na fase 2, tracing e Prometheus na fase de observabilidade, Kafka na fase assíncrona.
 - Para clientes HTTP entre serviços, começar com `RestClient` ou `@HttpExchange` do próprio Spring, avaliando o OpenFeign depois para comparação.
