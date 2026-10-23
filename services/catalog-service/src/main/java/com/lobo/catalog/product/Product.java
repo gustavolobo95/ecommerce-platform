@@ -6,6 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -13,6 +16,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "products")
+@Getter
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // exigido pelo JPA
 public class Product {
 
     @Id
@@ -34,10 +39,6 @@ public class Product {
     @Column(name = "created_at", nullable = false, updatable = false)
     private Instant createdAt = Instant.now();
 
-    protected Product() {
-        // exigido pelo JPA
-    }
-
     public Product(String name, String description, BigDecimal price) {
         this.name = name;
         this.description = description;
@@ -53,11 +54,4 @@ public class Product {
     public void deactivate() {
         this.active = false;
     }
-
-    public UUID getId() { return id; }
-    public String getName() { return name; }
-    public String getDescription() { return description; }
-    public BigDecimal getPrice() { return price; }
-    public boolean isActive() { return active; }
-    public Instant getCreatedAt() { return createdAt; }
 }
